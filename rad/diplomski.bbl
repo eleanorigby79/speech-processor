@@ -1,0 +1,22 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[ARM(2016)]{cortexm4}
+\emph{ARM® Cortex®-M for Beginners}.
+\newblock ARM, 2016.
+
+\bibitem[Ashutosh~Kacker(2019)]{uho}
+Ronald~Karlin Ashutosh~Kacker, Daphne Pierce-Smith.
+\newblock Anatomy and physiology of the ear.
+\newblock 2019.
+
+\bibitem[Heđever(2012)]{optimala}
+Mladen Heđever.
+\newblock \emph{Govorna akustika}.
+\newblock 2012.
+
+\end{thebibliography}
