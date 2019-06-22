@@ -1,0 +1,37 @@
+\babel@toc {croatian}{}
+\contentsline {chapter}{Popis slika}{vi}
+\contentsline {chapter}{\numberline {1}Uvod}{1}
+\contentsline {chapter}{\numberline {2}Analiza govora}{2}
+\contentsline {section}{\numberline {2.1}Nastanak glasa}{2}
+\contentsline {section}{\numberline {2.2}Karakteristike glasa}{3}
+\contentsline {subsection}{\numberline {2.2.1}Visina glasa}{3}
+\contentsline {subsection}{\numberline {2.2.2}Intenzitet}{4}
+\contentsline {subsection}{\numberline {2.2.3}Boja glasa}{4}
+\contentsline {subsection}{\numberline {2.2.4}Formanti}{4}
+\contentsline {chapter}{\numberline {3}Analiza sluha}{6}
+\contentsline {chapter}{\numberline {4}Sustav za obradu i analizu govora}{8}
+\contentsline {section}{\numberline {4.1}STM32F4-Discovery}{8}
+\contentsline {subsection}{\numberline {4.1.1}Glavne zna\IeC {\v c}ajke ugradbenog ra\IeC {\v c}unalnog sustava}{8}
+\contentsline {section}{\numberline {4.2}DSP Procesor}{9}
+\contentsline {subsection}{\numberline {4.2.1}CMSIS DSP biblioteka}{10}
+\contentsline {section}{\numberline {4.3}Vanjske komponente}{11}
+\contentsline {subsection}{\numberline {4.3.1}MEMS mikrofon}{11}
+\contentsline {section}{\numberline {4.4}Komunikacija unutar ugradbenog ra\IeC {\v c}unalnog sustava}{12}
+\contentsline {section}{\numberline {4.5}Audio kodek}{12}
+\contentsline {subsection}{\numberline {4.5.1}Komunikacija mikrofon - kodek}{12}
+\contentsline {subsection}{\numberline {4.5.2}Komunikacija kodek - izlaz}{12}
+\contentsline {subsection}{\numberline {4.5.3}PDM filtar}{13}
+\contentsline {chapter}{\numberline {5}Napredna obrada digitalnog signala}{14}
+\contentsline {section}{\numberline {5.1}Izvedba filtarskih realizacija}{14}
+\contentsline {section}{\numberline {5.2}Filtarske banke}{15}
+\contentsline {section}{\numberline {5.3}S1.11 ANSI 2004}{15}
+\contentsline {chapter}{\numberline {6}Algoritam vi\IeC {\v s}epojasnog filtriranja}{17}
+\contentsline {chapter}{\numberline {7}Analiza performansi sustava}{18}
+\contentsline {section}{\numberline {7.1}Obrada govora u MATLAB-u}{18}
+\contentsline {section}{\numberline {7.2}Grafi\IeC {\v c}ko su\IeC {\v c}elje za obradu govora}{19}
+\contentsline {section}{\numberline {7.3}Ograni\IeC {\v c}enja sustava}{20}
+\contentsline {subsection}{\numberline {7.3.1}Mikrofon}{20}
+\contentsline {subsection}{\numberline {7.3.2}Jezgra sustava za obradbu govora}{20}
+\contentsline {subsection}{\numberline {7.3.3}Ka\IeC {\v s}njenje}{21}
+\contentsline {chapter}{\numberline {8}Zaklju\IeC {\v c}ak}{22}
+\contentsline {chapter}{Literatura}{23}

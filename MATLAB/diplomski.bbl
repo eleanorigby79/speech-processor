@@ -1,0 +1,36 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[mic()]{mic}
+\emph{MP34DT06J datasheet}.
+
+\bibitem[ARM(2016)]{cortexm4}
+\emph{ARM® Cortex®-M for Beginners}.
+\newblock ARM, 2016.
+
+\bibitem[Ashutosh~Kacker(2019)]{uho}
+Ronald~Karlin Ashutosh~Kacker, Daphne Pierce-Smith.
+\newblock Anatomy and physiology of the ear.
+\newblock 2019.
+
+\bibitem[Heđever(2012)]{optimala}
+Mladen Heđever.
+\newblock \emph{Govorna akustika}.
+\newblock 2012.
+
+\bibitem[Liu(2010)]{fbdha}
+Yu-Ting Kuo Tay-Jyi Lin Yueh-Tai Li Chih-Wei Liu.
+\newblock Design and implementation of low-power ansi s1.11 filter bank for
+  figital hearing aids.
+\newblock \emph{IEEE transactions on circuits and systems}, 2010.
+
+\bibitem[society~of America(2004)]{ansi2004}
+Acoustical society~of America.
+\newblock \emph{ANSI S1.11: Specification for Octave, Half-Octave, and Third
+  Octave Band Filter Sets}, 2004.
+
+\end{thebibliography}
