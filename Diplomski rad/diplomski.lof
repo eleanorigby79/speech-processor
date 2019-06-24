@@ -1,0 +1,25 @@
+\babel@toc {croatian}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Anatomija ljudskog vokalnog trakta\relax }}{3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Raspon frekvencija audio frekvencija koje spadaju pod ljudsko slu\IeC {\v s}no podru\IeC {\v c}je\relax }}{5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Anatomija uha \relax }}{6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fletcher-Munson krivulje\relax }}{7}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Standardne frekvencije tercnih filtara kod glasova\relax }}{8}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Spektrogram glasova a, \IeC {\v s}, m, d\relax }}{9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Dijagram izvo\IeC {\dj }enja SIMD instrukcije zbrajanja\relax }}{12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Strukture filtara s lijeva na desno: direktna II realizacija za IIR filtre, direktna II transponirana realizacija za IIR filtre, direktna realizacija za FIR filtre\relax }}{14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tehni\IeC {\v c}ka izvedba MEMS mikrofona\relax }}{15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Shema odre\IeC {\dj }ivanja gu\IeC {\v s}enja filtra klase 2\relax }}{20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Prikaz spektra prije i nakon decimacije s faktorom 2\relax }}{22}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Prikaz spektra nakon decimacije i interpolacije s faktorom 2\relax }}{22}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Blok dijagram decimiranog sloga\relax }}{23}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Blok dijagram interpoliraju\IeC {\'c}eg sloga\relax }}{24}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Projektiranje FIR filtra Parks-McClellanovom metodom\relax }}{25}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Izgled grafi\IeC {\v c}kog su\IeC {\v c}elja u MATLAB-u\relax }}{28}
+\addvspace {10\p@ }

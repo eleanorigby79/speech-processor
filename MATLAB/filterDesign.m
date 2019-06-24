@@ -1,4 +1,4 @@
-function [fs1,fs2,n1,n2,b1,b2] = filterDesign(fc,rp,rs)
+function [fs1,fs2,n1,n2,b1,b2] = filterDesign(fc,rp,rs,fs)
 %FILTERDESIGN Summary of this function goes here
 %   Detailed explanation goes here
 f1 = fc/(2^(1/6)); 
@@ -7,10 +7,8 @@ fp1 = f1;
 fp2 = f2;
 
 
-fs = 44100;        %Sampling frequency
-
-TBW1 = fc*0.1;
-TBW2 = fc*0.1;
+TBW1 = fc/20;
+TBW2 = fc/20;
 
 
 a = [0 1];        % Desired amplitudes
@@ -24,19 +22,18 @@ while true
     
     [n1,fo1,ao1,w1] = firpmord(f1,[0 1],dev,fs);
     [n2,fo2,ao2,w2] = firpmord(f2,[1 0],dev,fs);
-    
-    if(n1 == n2 && n1 < 40)
-        fs1 = (fp1 - TBW1);
-        fs2 = (TBW2 + fp2);
-        break;
-    else
+
         TBW1 = 1.05*TBW1;
         TBW2 = 1.05*TBW2;
         f1(1) = (fp1 - TBW1);
         f2(2) = (fp2 + TBW2);
-    end
+    if(temp ~= n1 && n1 < 40)
+        fs1 = (fp1 - TBW1);
+        fs2 = (TBW2 + fp2);
+        break;
+    else
+        temp = n1;
 end
 
 
 end
-

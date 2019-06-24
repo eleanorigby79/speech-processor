@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650 64-bit) (preloaded format=pdflatex 2018.4.13)  21 JUN 2019 11:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650 64-bit) (preloaded format=pdflatex 2018.4.13)  24 JUN 2019 11:19
 entering extended mode
 **./diplomski.tex
 (diplomski.tex
@@ -464,32 +464,35 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-)) (diplomski.aux
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\cases\cases.sty"
+Package: cases 2002/05/02 ver 2.5 
+) (diplomski.aux
 
-LaTeX Warning: Label `SIMD' multiply defined.
+LaTeX Warning: Label `gui' multiply defined.
 
 )
 \openout1 = `diplomski.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 5.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -593,32 +596,32 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count127
-LaTeX Font Info:    Try loading font information for T1+phv on input line 16.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 18.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/Paula/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 19.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -645,27 +648,24 @@ Poglavlje 1.
 ]
 Poglavlje 2.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 38.
-
-LaTeX Warning: File `photos/vokalni trakt.jpg' not found on input line 60.
-
-<photos/vokalni trakt.jpg, id=30, 451.6875pt x 429.5247pt>
-File: photos/vokalni trakt.jpg Graphic file (type jpg)
-<use photos/vokalni trakt.jpg>
-Package pdftex.def Info: photos/vokalni trakt.jpg  used on input line 60.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 40.
+<photos/vokalnitrakt.jpg, id=30, 451.6875pt x 429.5247pt>
+File: photos/vokalnitrakt.jpg Graphic file (type jpg)
+<use photos/vokalnitrakt.jpg>
+Package pdftex.def Info: photos/vokalnitrakt.jpg  used on input line 62.
 (pdftex.def)             Requested size: 225.84319pt x 214.76183pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 61.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 63.
 [2
 
-] [3 <./photos/vokalni trakt.jpg>] [4]
+] [3 <./photos/vokalnitrakt.jpg>] [4]
 <photos/raspon.png, id=42, 904.37875pt x 215.80624pt>
 File: photos/raspon.png Graphic file (type png)
 <use photos/raspon.png>
-Package pdftex.def Info: photos/raspon.png  used on input line 84.
+Package pdftex.def Info: photos/raspon.png  used on input line 86.
 (pdftex.def)             Requested size: 452.18828pt x 107.90285pt.
 
-Overfull \hbox (39.6233pt too wide) in paragraph at lines 84--85
+Overfull \hbox (39.6233pt too wide) in paragraph at lines 86--87
  [][] 
  []
 
@@ -674,7 +674,7 @@ Poglavlje 3.
 <photos/earanatomy.png, id=48, 746.01291pt x 559.50967pt>
 File: photos/earanatomy.png Graphic file (type png)
 <use photos/earanatomy.png>
-Package pdftex.def Info: photos/earanatomy.png  used on input line 98.
+Package pdftex.def Info: photos/earanatomy.png  used on input line 100.
 (pdftex.def)             Requested size: 373.00554pt x 279.75415pt.
 [6
 
@@ -682,82 +682,125 @@ Package pdftex.def Info: photos/earanatomy.png  used on input line 98.
 <photos/flemu.jpg, id=52, 1003.75pt x 789.95125pt>
 File: photos/flemu.jpg Graphic file (type jpg)
 <use photos/flemu.jpg>
-Package pdftex.def Info: photos/flemu.jpg  used on input line 112.
+Package pdftex.def Info: photos/flemu.jpg  used on input line 114.
 (pdftex.def)             Requested size: 401.49289pt x 315.9749pt.
  [7 <./photos/flemu.jpg>]
+<photos/optimale.jpg, id=58, 464.4853pt x 576.65437pt>
+File: photos/optimale.jpg Graphic file (type jpg)
+<use photos/optimale.jpg>
+Package pdftex.def Info: photos/optimale.jpg  used on input line 127.
+(pdftex.def)             Requested size: 278.69333pt x 345.99529pt.
+ [8 <./photos/optimale.jpg>]
+
+LaTeX Warning: Reference `ch:frek' on page 9 undefined on input line 134.
+
+<photos/spect.jpg, id=62, 562.1pt x 421.575pt>
+File: photos/spect.jpg Graphic file (type jpg)
+<use photos/spect.jpg>
+Package pdftex.def Info: photos/spect.jpg  used on input line 140.
+(pdftex.def)             Requested size: 393.46732pt x 295.10048pt.
+[9 <./photos/spect.jpg>] [10]
 Poglavlje 4.
-[8
+[11
 
 ]
-<photos/simd.png, id=61, 965.10562pt x 650.43pt>
+<photos/simd.png, id=72, 965.10562pt x 650.43pt>
 File: photos/simd.png Graphic file (type png)
 <use photos/simd.png>
-Package pdftex.def Info: photos/simd.png  used on input line 149.
+Package pdftex.def Info: photos/simd.png  used on input line 182.
 (pdftex.def)             Requested size: 386.03542pt x 260.16739pt.
- [9 <./photos/simd.png>]
-Overfull \hbox (20.89949pt too wide) in paragraph at lines 180--181
-[]$\OML/cmm/m/it/12 arm[]biquad[]cascade[]df\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 T
-[]f\OT1/cmr/m/n/12 32(\OML/cmm/m/it/12 constarm[]biquad[]cascade[]df\OT1/cmr/m/
-n/12 2\OML/cmm/m/it/12 T[]instance[]f\OT1/cmr/m/n/12 32 \OMS/cmsy/m/n/12 
+ [12 <./photos/simd.png>]
+<photos/filtstruct.png, id=78, 1830.84pt x 398.48875pt>
+File: photos/filtstruct.png Graphic file (type png)
+<use photos/filtstruct.png>
+Package pdftex.def Info: photos/filtstruct.png  used on input line 213.
+(pdftex.def)             Requested size: 549.25624pt x 119.54755pt.
+
+Overfull \hbox (136.69127pt too wide) in paragraph at lines 213--214
+ [][] 
  []
 
-<photos/df2t.png, id=67, 414.54875pt x 277.035pt>
-File: photos/df2t.png Graphic file (type png)
-<use photos/df2t.png>
-Package pdftex.def Info: photos/df2t.png  used on input line 186.
-(pdftex.def)             Requested size: 248.73116pt x 166.22227pt.
-[10]
-<photos/gradjamems.png, id=72, 501.37312pt x 149.8097pt>
+[13]
+<photos/gradjamems.png, id=84, 501.37312pt x 149.8097pt>
 File: photos/gradjamems.png Graphic file (type png)
 <use photos/gradjamems.png>
-Package pdftex.def Info: photos/gradjamems.png  used on input line 209.
+Package pdftex.def Info: photos/gradjamems.png  used on input line 236.
 (pdftex.def)             Requested size: 401.09903pt x 119.8479pt.
 
-Overfull \hbox (0.50998pt too wide) in paragraph at lines 214--214
+Overfull \hbox (0.50998pt too wide) in paragraph at lines 241--241
 []\T1/ptm/b/n/17.28 Komunikacija unu-tar ugrad-be-nog ra-£u-nal-nog sus-
  []
 
-[11 <./photos/df2t.png>] [12 <./photos/gradjamems.png>] [13]
+[14 <./photos/filtstruct.png (PNG copy)>] [15 <./photos/gradjamems.png>]
+[16]
 Poglavlje 5.
-[14
-
-] [15] [16]
-Poglavlje 6.
 [17
 
-]
-Poglavlje 7.
-[18
+] [18] [19]
+<photos/klasa2.png, id=112, 2803.47375pt x 2576.62625pt>
+File: photos/klasa2.png Graphic file (type png)
+<use photos/klasa2.png>
+Package pdftex.def Info: photos/klasa2.png  used on input line 357.
+(pdftex.def)             Requested size: 280.3638pt x 257.67772pt.
+ [20 <./photos/klasa2.png>]
+Poglavlje 6.
+<photos/decimacija.png, id=117, 517.18219pt x 377.15906pt>
+File: photos/decimacija.png Graphic file (type png)
+<use photos/decimacija.png>
+Package pdftex.def Info: photos/decimacija.png  used on input line 384.
+(pdftex.def)             Requested size: 310.3117pt x 226.29718pt.
+[21
 
 ]
-Overfull \hbox (3.7446pt too wide) in paragraph at lines 349--350
+<photos/interp.png, id=121, 514.17094pt x 375.65344pt>
+File: photos/interp.png Graphic file (type png)
+<use photos/interp.png>
+Package pdftex.def Info: photos/interp.png  used on input line 397.
+(pdftex.def)             Requested size: 308.50494pt x 225.3938pt.
+ [22 <./photos/decimacija.png> <./photos/interp.png>]
+<photos/decslog.png, id=127, 426.84468pt x 490.08093pt>
+File: photos/decslog.png Graphic file (type png)
+<use photos/decslog.png>
+Package pdftex.def Info: photos/decslog.png  used on input line 416.
+(pdftex.def)             Requested size: 256.10878pt x 294.05083pt.
+ [23 <./photos/decslog.png>]
+<photos/intslog.png, id=131, 356.83313pt x 490.08093pt>
+File: photos/intslog.png Graphic file (type png)
+<use photos/intslog.png>
+Package pdftex.def Info: photos/intslog.png  used on input line 432.
+(pdftex.def)             Requested size: 214.10152pt x 294.05083pt.
+ [24 <./photos/intslog.png>]
+<photos/firpm.png, id=135, 614.295pt x 369.63094pt>
+File: photos/firpm.png Graphic file (type png)
+<use photos/firpm.png>
+Package pdftex.def Info: photos/firpm.png  used on input line 463.
+(pdftex.def)             Requested size: 368.57983pt x 221.78026pt.
+ [25 <./photos/firpm.png>] [26]
+Poglavlje 7.
+[27
+
+]
+Overfull \hbox (3.7446pt too wide) in paragraph at lines 530--531
 []\T1/ptm/m/n/12 Pomo¢u Audi-oPro-ce-ssin-g-To-ol-boxa omo-gu-¢eno je sni-ma-nj
 e i re-pro-du-ci-ra-nje u stvar-
  []
 
-<photos/gui.png, id=107, 398.99063pt x 291.33844pt>
+<photos/gui.png, id=147, 398.99063pt x 291.33844pt>
 File: photos/gui.png Graphic file (type png)
 <use photos/gui.png>
-Package pdftex.def Info: photos/gui.png  used on input line 360.
+Package pdftex.def Info: photos/gui.png  used on input line 540.
 (pdftex.def)             Requested size: 199.49483pt x 145.66885pt.
-
-Package caption Warning: \label without proper reference on input line 358.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `gui' on page 19 undefined on input line 364.
-
-[19 <./photos/gui.png>] [20] [21]
+[28 <./photos/gui.png>] [29] [30]
 Poglavlje 8.
-(diplomski.bbl [22
+(diplomski.bbl [31
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 12.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)) [23
+)) [32
 
-] [24] (diplomski.aux)
+] [33] (diplomski.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -766,13 +809,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8490 strings out of 492976
- 117236 string characters out of 3135991
- 201051 words of memory out of 3000000
- 12164 multiletter control sequences out of 15000+200000
- 73946 words of font info for 93 fonts, out of 3000000 for 9000
+ 8567 strings out of 492976
+ 118751 string characters out of 3135991
+ 201418 words of memory out of 3000000
+ 12230 multiletter control sequences out of 15000+200000
+ 70522 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,8n,42p,1215b,1099s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,13n,42p,1215b,1652s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -790,9 +833,9 @@ ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on diplomski.pdf (30 pages, 2446254 bytes).
+Output written on diplomski.pdf (39 pages, 3047261 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
+ 227 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

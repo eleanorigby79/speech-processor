@@ -2,6 +2,8 @@
 \usepackage{booktabs}
 \usepackage{fixltx2e}
 \usepackage[options]{mcode}
+\usepackage{amsmath}
+\usepackage{cases}
 \begin{document}
 
 % TODO: Navedite broj rada.
@@ -57,7 +59,7 @@ Vokalni trakt se ponaša kao svojevrstan filtar, koji će spektralno obojiti pob
 
 \begin{figure}[hbt!]
  \centering
- \includegraphics[scale=0.5]{photos/vokalni trakt.jpg}
+ \includegraphics[scale=0.5]{photos/vokalnitrakt.jpg}
  \caption{Anatomija ljudskog vokalnog trakta}
  \label{trakt}
 \end{figure}
@@ -115,10 +117,41 @@ Zanimljiva karakteristika uha jest ovisnost frekvencijskog odziva prema glasnoć
 \end{figure}
 Govor spada pod već spomenute zvučne signale. Kao što je u poglavlju \ref{chap:sluh} objašnjeno, ljudsko uho može percipirati signale frekvencija od 20 Hz do 20000 Hz. Ljudski govor spada u područje od 200 Hz do 5000 Hz, ovisno o spolu i dobi osobe. Iako je tu već očigledno da nam neće biti potreban spektar iznad 5000 Hz, nastojat ćemo ga zadržati nakon očitavanja kako ne bi gubili na kvaliteti signala, što nam je u ove svrhe bitno.
 
+\section{Optimale}
+Svaki glas ima samo jedno oktavno frekvencijsko područje u kojemu se najbolje i najbrže razumije, a to je otprilike od 500 Hz do 5000 Hz. Izdvajanje jednog oktavnog područja, za razumijevanje glasa, od svih ostalih, na tragu je štednje i manjeg napora. 
+
+Postoji nekoliko tipova filtarskih krivulja. Krivulje su prilagođene pojedinim vrstama poremećaja (npr. dislalija, mucanje, oštećenja sluha i sl.), ali i pojedinim oblicima poremećaja. Isto tako, pripremljene su krivulje za pojedine skupine glasova koji imaju vrlo slične akustičke karakteristike ili su supstituirani istim  glasovima. Kontinuirane optimale predstavljaju filtarsku krivulju bez prekida dok diskontinuirane predstavljaju filtarske krivulje s prekidom, najčešće na dva odvojena pojasa, a one su danas popularnije jer se većina glasova percipira preko diskontinuiranih optimala. Širina optimala također varira, i to od trećine do pune oktave.
+
+\begin{figure}[ht!]
+\centering
+  \includegraphics[scale=0.6]{photos/optimale.jpg}
+  \caption{Standardne frekvencije tercnih filtara kod glasova}
+  \label{fig:optimale}
+\end{figure}
+
+U tablici \ref{fig:optimale} vidimo definirane centralne frekvencije tercnih filtara te njihovo frekvencijsko područje. Možemo uočiti da se ovi tercni filtri koriste također kod optimala glasova.
+
+Spektralna analiza govora je široko primjenjiva kod analize poremećaja izgovora određenih glasova. U poglavlju \ref{ch:frek} smo prikazali frekvencijska područja svih glasova u hrvatskom jeziku. 
+
+Optimale glasova su definirane analizom glasa osoba bez poremećaja govora i u standardnim uvjetima nam daju referencu kod analize poremećaja kod izgovora. Spektralna analiza je omogućila uvid da se neki glasovi bolje slušaju na kontinuiranim, a neke na diskontinuiranim optimalama. Jedino se vokali A i O slušaju na kontinuiranom području dok se svi drugi vokali i konsonanti mogu slušati na diskontinuiranim ili kontinuiranim frekvencijskim pojasevima. Osobito se dobro percipiraju na diskontinuiranim pojasevima frikativi i afrikati, te glasovi R, L i LJ. Skupne diskontinuirane perceptivne optimale istovremeno omogućuju dobru razumljivost pojedine skupine glasova koji imaju slične artikulacijsko-akustičke karakteristike i koji se udruženo pojavljuju kod poremećaja artikulacije (npr. S, Z, C - uža skupina sigmatizma ili Š, Ž, Č, Ć, Đ, Dž - šira skupina) znajući da se poremećaji ne javljaju samo kod jednog glasa  već kod skupine glasova \citep{optimala}.
+
+\begin{figure}[ht!]
+
+  \includegraphics[scale=0.7]{photos/spect.jpg}
+  \caption{Spektrogram glasova a, š, m, d}
+  \label{fig:spektrogram glasa}
+\end{figure}
+
+Ono što je određuje kontinuirano i/ili diskontinuirano slušanje glasa jest koliko terci su udaljene optimale. Razlikujemo također i glasove koji imaju diskontinuirana područja, ali na nižem frekvencijskom području je razumljivost glasa dovoljno dobra. U tom slučaju gornju optimalu nazivamo redundantnom optimalom \cite{slusanje}.
+
+
+Slika \ref{fig:spektrogram glasa} prikazuje spektrogram glasova a, š, m, d. Usporedimo li tablicu \ref{fig:optimale} sa spektrogramom, uočavamo kod glasa a na spektrogramu da područje oko 800 Hz ima najviše energije. Kod glasa š (koji zvuči približno ko ružičasti šum) vidimo da se dobar udio energije nalazi između 5000 Hz i 10000 Hz, kao i u tablici optimala. Analizirajući dalje za glasove m i d uočiti ćemo jednake sličnosti.
+
+Naravno, u obzir moramo uzeti i spol i dob ispitanika zbog fundamentalne frekvencije titranja glasnica te duljini vokalnog trakta. Ne smijemo zaboraviti da isti ovi parametri uvjetuju i intenzitet glasa direktno definirajući raspodjelu energije kod izgovora glasa.
 \chapter{Sustav za obradu i analizu govora}
-Za razvoj sustava čija je svrha obrada i analiza govora koristi se MATLAB za generiranje filtarskih realizacija za obradu govora te STM32F4-Discovery ugradbeni sustav kojim će se vršiti akvizicija i filtracija signala. Napravit će se pregled već dostupnih tehnologija za obradbu audio signala (u našem slučaju govora).
+Za razvoj sustava čija je svrha obrada i analiza govora koristi se MATLAB za dizajn filtara za obradu govora te STM32F4-Discovery ugradbeni sustav kojim će se vršiti akvizicija i filtracija signala. Napravit će se pregled već dostupnih tehnologija za obradbu audio signala (u našem slučaju govora).
 
-
+\section{Dostupne tehnologije}
 
 
 \section{STM32F4-Discovery}
@@ -132,9 +165,9 @@ Sustav koji želimo razviti za potrebe obrade govornog signala nam zahtjeva klju
 \item MEMS mikrofon koji vrši akviziciju signala
 \end{enumerate}
 
-Kod ovakvog sustava potrebno je pobrinuti se da je akvizicija signala brza i ne narušava inicijalnu frekvencijsku karakteristiku glasa te da je obrad signala brza i kvalitetna. 
+Kod ovakvog sustava potrebno je pobrinuti se da je akvizicija signala brza i ne narušava inicijalnu frekvencijsku karakteristiku glasa te da je obrada signala brza i kvalitetna. 
 
-Naš ugradbeni računalni sustav jest STM32F407VG. On sadrži ARM Cortex-M4 procesor sa DSP značajkama koji će nam biti ključan za daljnju obradu signala. Ovaj mikrokontroler već ima ugrađeni MEMS mikrofon i A/D pretvornik no oni su namijenjeni za opću primjenu, dok su nama potrebne komponente za isključivu obradu audio signala tako da će se u daljnjim potpoglavljima napraviti usporedba dostupnih te traženih komponenti.
+Naš ugradbeni računalni sustav jest STM32F407VG. On sadrži ARM Cortex-M4 procesor sa DSP značajkama koji će nam biti ključan za daljnju obradu signala. Ovaj mikrokontroler već ima ugrađeni digitalni MEMS mikrofon i A/D pretvornik no oni su namijenjeni za opću primjenu, dok su nama potrebne komponente za isključivu obradu audio signala tako da će se u daljnjim potpoglavljima napraviti usporedba dostupnih te traženih komponenti.
 
 \section{DSP Procesor}
 \label{instr}
@@ -151,11 +184,7 @@ Ono što čini ovaj procesor pogodnim za digitalnu obradu audio signala jest št
  \label{SIMD}
 \end{figure}
 
-Kao što se vidi na slici \ref{SIMD}, podatke koje želimo zbrojiti podijelimo na nižih 16 bita i viših 16 bita. Kod oba podatka zbrajaju se posebno niži bitovi i posebno viši bitovi. Ono što je ključno kod SIMD naredbe jest aritmetika zasićenja. U slučaju da zbroj nižih ili viših bitova prelazi maksimalni broj koji je moguće spremiti, on se zaokružuje na taj maksimalni broj. SIMD instrukcije zbog ove karakteristike imaju najčešću primjenu u audio sustavima.
-
-\textit{Multiply and Accumulate} (MAC) je skupina instrukcija fundamentalna za digitalnu obradu signala. Ona omogućuje množenje dvaju podataka te zbrajanje s vrijednosti akumulatora u jednom ciklusu, što je čini savršenom kod filtriranja podataka pomoću FIR filtara.
-
-$a <- a + x * y$
+Kao što se vidi na slici \ref{SIMD}, podatke koje želimo zbrojiti podijelimo na nižih 16 bita i viših 16 bita. Kod oba podatka zbrajaju se posebno niži bitovi i posebno viši bitovi. Ono što je ključno kod SIMD naredbe jest aritmetika zasićenja. U slučaju da zbroj nižih ili viših bitova prelazi maksimalni broj koji je moguće spremiti, on se zaokružuje na taj maksimalni broj. SIMD instrukcije zbog ove karakteristike imaju najčešću primjenu u audio sustavima. Kod ARM Cortex-M4 procesora, postoji mogućnost korištenja SIMD instrukcija nad 2 16-bitna podatka i 4 8-bitna podatka.
 
 \subsection{CMSIS DSP biblioteka}
 Za ugradbene sustave s Cortex-M procesorima postoji razvijena biblioteka za digitalnu obradu signala. Biblioteka je podijeljena na nekoliko funkcija od kojih svaka pokriva određenu kategoriju:
@@ -175,25 +204,19 @@ Za ugradbene sustave s Cortex-M procesorima postoji razvijena biblioteka za digi
 
 Svaka od ovih funkcija ima podršku za 8-bitne, 16-bitne, 32-bitne \textit{integer} podatke te 32-bitne \textit{floating point} podatke.
 
-Za potrebe filtracije će se koristiti kategorija funkcija 'Filtri' te se koriste 16-bitni \textit{integer} podaci kako bi se umanjila vremenska komponenta obrade signala. U središtu obrade signala će biti funkcija 
+Za potrebe filtracije će se koristiti kategorija funkcija 'Filtri' te, iako procesor nudi podršku za obradu \textit{floating point} podataka, se koriste 16-bitni \textit{integer} podaci kako bi se umanjila vremenska komponenta obrade signala. Na slici \ref{struct} vidimo 3 filtarske strukture koje se koriste prilikom filtriranja. Prve dvije strukture na slici se koriste za IIR filtre te su poboljšana verzija direktnih I struktura te treća realizacija jest direktna realizacija za FIR filtre.
 
-\textit{$arm\_biquad\_cascade\_df2T\_f32 (const arm\_biquad\_cascade\_df2T\_instance\_f32 *S, const float32\_t *pSrc, float32\_t *pDst, uint32\_t blockSize)$} 
-
-koja koristi bikvadratne sekcije IIR filtra. Struktura koja omogućuje filtraciju signala jest Direktna II transponirana realizacija filtra. Na slici \ref{df2t} možemo vidjeti blok dijagram izvedbe strukture.
+Što se tiče samih složenosti filtarskih realizacija, direktna realizacija za FIR filtre, ukoliko ima $L$ uzoraka impulsnog odziva, odradi $L$ množenja te $L-1$ zbrajanja. Direktna II i II transponirana odrade $M + N + 1$ množenja i isto toliko zbrajanja, gdje $M$ predstavlja broj nula, a $N$ broj polova. Za IIR realizacije struktura, potrebno je također i $max(M,N)$ memorijskih lokacija dok kod FIR realizacija nema potrebe za korištenjem dodatnih memorijskih lokacija za stanja.
 
 \begin{figure}[hbt!]
  \centering
- \includegraphics[scale=0.6]{photos/df2t.png}
- \caption{Direktna II transponirana realizacija filtra}
- \label{df2t}
+ \includegraphics[scale=0.2]{photos/filtstruct.png}
+ \caption{Strukture filtara s lijeva na desno: direktna II realizacija za IIR filtre, direktna II transponirana realizacija za IIR filtre, direktna realizacija za FIR filtre}
+ \label{struct}
 \end{figure}
 
-Složenost proračuna kod direktne II transponirane realizacije drugog reda (za bikvadratne sekcije) jest: 5 množenja, 4 dvoulazna zbrajanja i 2 memorijske lokacije. S obzirom da koristimo IIR butterworth filtar sa sedam koefijenata, imamo 2?? bikvadratne sekcije te tipe imamo sveukupno 10 množenja, 8 dvoulaznih zbrajanj te 4 memorijske lokacije za stanja. Ako usporedimo sa FIR relizacijom filtra i uzmemo u obzir 40 filtarskih koeficijenata da bi postigli jednake performanse kao i IIR filtar, imamo sveukupno: 40 množenja, 1 zbrajanje te nemamo memorijskih lokacija.
+S obzirom da se radi o Cortex-M4 procesoru koji ima podršku za MAC i SIMD instrukcije koje su objašnjene u poglavlju \ref{SIMD}, procesno vrijeme se dvostruko? ubrzava.
 
-
-S obzirom da se radi o Cortex-M4 procesoru koji ima podršku za MAC i SIMD instrukcije koje su objašnjene u poglavlju \ref{SIMD}, procesno vrijeme se dvostruko ubrzava.
-
-*Podatke o količini zbrajanja, množenja te količina potrebnih memorijskih lokacija se treba još jednom provjeriti te napraviti usporedbu s korištenjem FIR filtara*
 \section{Vanjske komponente}
 \subsection{MEMS mikrofon}
 MEMS (eng. \textit{MicroElectrical-Mechanical System}) mikrofoni pogodni su za ugradbene računalne sustave zbog svog dobrog omjera signala prema šumu, male potrošnje energije, dolazi u vrlo malim pakiranjima te su odličnih temperaturnih karakteristika.
@@ -208,7 +231,7 @@ Postoje dvije izvedbe MEMS mikrofona, a to su analogna i digitalna verzija. U ob
  \centering
  \includegraphics[scale=0.8]{photos/gradjamems.png}
  \caption{Tehnička izvedba MEMS mikrofona}
- \label{SIMD}
+ \label{MEMS}
 \end{figure}
 
 \section{Komunikacija unutar ugradbenog računalnog sustava}
@@ -247,7 +270,7 @@ Prilikom implementacije grafičkog ekvilajzera, nije moguće koristiti kaskadnu 
 \section{Izvedba filtarskih realizacija}\label{filtri}
 U poglavlju \ref{chap:sluh} smo se upoznali s činjenicom da je raspon ljudskog slušnog područja od 20 Hz do 20000 Hz, no isto tako prilikom govora možemo primijetiti da se u tom rasponu kreće i frekvencijski spektar samog govora, što znači da prilikom govora osobe, pogotovo djeca koja imaju prirodno viši glas, mogu generirati frekvencije i iznad 10000 Hz (prilikom izgovora glasa C). 
 
-Tako je potrebno generirati 18 pojasno propusnih filtara  čiji su parametri usklađeni s međunarodnim standardima i preporukama (ISO R 266, DIN 401 i ANSI S1.1-2004). Razlog odabira točno 18 pojaseva će biti razjašnjeno u jednom od sljedećih poglavlja.
+Tako je potrebno generirati 21 pojasno-propusni filtar  čiji su parametri usklađeni s međunarodnim standardima i preporukama (ISO R 266, DIN 401 i ANSI S1.1-2004). Razlog odabira točno 21 pojasa će biti razjašnjeno u jednom od sljedećih poglavlja.
  
 Za realizaciju filtra moguć je odabir između optimalnog FIR filtra i Butterworth filtra. 
 
@@ -258,8 +281,9 @@ Butterworth filtar predstavlja IIR tip filtra (eng. \textit{infinite impulse res
 \begin{equation}
 \begin{aligned}
 \sum_{l=0}^{N}a_{l}y[n-l] = \sum_{k=0}^{M}b_{k}x[n-k]
-\end{equation}
 \end{aligned}
+\end{equation}
+
 
 gdje $N$ i $M$ predstavljaju broj uzoraka na ulazu i izlazu, slijedom.
 
@@ -270,15 +294,36 @@ Razlog zbog kojeg je u nekim slučajevima češće korišten IIR tip filtra jest
 
 S druge strane, postoji opcija realizacije sustava s optimalnim FIR filtrima. Ovaj filtar dizajnira se iterativnim Parks-McClellan algoritmom koji omogućuje minimiziranje maksimalne greške te korisniku dopušta da eksplicitno odredi širinu prijelaznog područja, razinu gušenja te razinu valovitosti u prijelaznom području. Iako u konačnici ovakav filtar za pristojna svojstva implementacije sustava za obradbu govora ima najčešće preko 40 koeficijenata, ono što je ključno kod njega jest linearna faza.
 
-Također, koeficijenti filtra je potrebno pretvoriti u 16-bitne cjelobrojne koeficijente. Slika *Dodati sliku* prikazuje ponašanje izvornog filtra te 16-bitnu varijantu. Ono što se može uočiti je da filtar ne gubi svoju izvornu kvalitetu pri kvantizaciji koeficijenata tako da se mogu očekivati dobre performanse filtriranja te uštedu na vremenu pri filtriranju na mikrokontroleru. 
+Iako jest potrebna ušteda izvršenih instrukcija koja se može postići sa malo koeficijenata Butterworth filtra, vidjet ćemo da je za dizajn filtara u ovom slučaju bitniji, stoga je odabran optimalni FIR filtar dizajniran Parks-McClellanovom metodom.
+
+U konačnici, koeficijenti tih filtara je potrebno pretvoriti u 16-bitne cjelobrojne koeficijente. Slika *Dodati sliku* prikazuje ponašanje izvornog filtra te 16-bitnu varijantu. Ono što se može uočiti je da filtar ne gubi svoju izvornu kvalitetu pri kvantizaciji koeficijenata tako da se mogu očekivati dobre performanse filtriranja te uštedu na vremenu pri filtriranju na mikrokontroleru. 
 
 \section{Filtarske banke}
-Filtarske banke jesu struktura koja na prethodno definirani broj pojasnih filtara šalje ulazni signal te nakon filtracije sve pojaseve zbraja te šalje na izlaz. Iako ovakva filtracija signala troši procesne resurse, za svaki filtar se može zasebno odrediti razina pojačanja/gušenja svakog pojasa. Na taj način ostali pojasevi ostaju netaknuti.
+Filtarske banke jesu struktura koja na prethodno definirani broj pojasnih filtara šalje ulazni signal te nakon filtracije sve pojaseve zbraja te šalje na izlaz. Iako ovakva filtracija signala troši procesne resurse, za svaki filtar se može zasebno odrediti razina pojačanja/gušenja svakog pojasa. Na taj način ostali pojasevi ostaju netaknuti. Pseudokod ovog algoritma definiran je na sljedeći način:
+
+\begin{lstlisting} 
+while true
+	output = 0;
+    record sound;
+    for i=1:noOfBands
+    	tempOut = filter(sound);
+    	output += tempOut;
+  	end;
+  	play(output);
+ end
+\end{lstlisting}
+
+Ovakav pristup funkcionira u slučaju da imamo do 10 banki i obradbu vršimo na računalu, no, u ovom konkretnom slučaju se obradba govora vrši na ugradbenom računalnom sustavu, količina instrukcija koje se izvode se trebaju svest na minimum.
+
+Nadalje, za filtraciju se koriste tercno-oktavni filtri koji predstavljaju svojevrsnu predodžbu percipiranja frekvencija tijekom slušanja. U sljedećem poglavlju ćemo se pobliže upoznati sa dizajnom tercno-oktavnih filtara te norme koje se trebaju poštovati pri dizajnu.
 
 \section{S1.11 ANSI 2004}
-U inačici S1.11 ANSI 2004 standarda definira se dizajn oktavno i frakcionalno oktavnih filtara. Ključna stvar kod definicije ovakvih filtara jest centralna frekvencija i razina gušenja filtra.
+U inačici S1.11 ANSI 2004 standarda definira se zahtjevi dizajna oktavno i frakcionalno oktavnih filtara, u analognoj ili digitalnoj izvedbi. Ključna stvar kod definicije ovakvih filtara jest centralna frekvencija i razina gušenja filtra.
 
-U ovom slučaju fokus će bit na implementaciju tercno-oktavnih filtarskih banka. Koa određivanja centralnih frekvencija koristi se formula:
+U ovom slučaju fokus će bit na implementaciju tercno-oktavnih filtarskih banka. Tercno-oktavni filtri proizlaze iz oktavnih filtara tako da se jedan oktavni dijeli na 3 dijela. Ovakve filtre karakterizira pojasi različite širine ovisno o centralnoj frekvenciji, kod formiranja banke poznati su pod nazivom ne-uniformne filtarske banke.
+
+Tako se ovim standardom između ostalog definira formula za određivanje centralne frekvencije koja je sljedeća:
+
 \begin{equation}
 \begin{aligned}
 f_c = 2^\frac{x-3}{30}*f_m   [Hz]
@@ -298,21 +343,146 @@ f_g = f_c \cdot 2^\frac{1}{6}
 \end{aligned}
 \end{equation}
 
-primjerice, u slučaju da imamo centralnu frekvenciju 200 Hz, gornja granična frekvencija iznosi 224,49 Hz, a donja 178.18 Hz. Širina tog pojasa iznosi svega 46.31 Hz, uzevši u obzir našu frekvenciju uzorkovanja, to je jako usko područje te bi bilo potrebno više koeficijenata za njegovu realizaciju.
+Primjerice, u slučaju da imamo centralnu frekvenciju 200 Hz, gornja granična frekvencija iznosi 224,49 Hz, a donja 178.18 Hz. Širina tog pojasa iznosi svega 46.31 Hz, uzevši u obzir našu frekvenciju uzorkovanja, to je jako usko područje te bi bilo potrebno više koeficijenata za njegovu realizaciju. U nastavku ćemo vidjeti kako se ovaj problem može riješiti bez proračuna dodatnih koeficijenata filtra.
 
-Nakon određivanja centralnih frekvencija te pojasa propuštanja, potrebno je odrediti tip filtra koji će se koristiti te jedna od vrsta te vrste filtra \citep{ansi2004}.
+Osim određivanja centralnih frekvencija, u standardu postoje 3 klase filtara, a karakterizira ih strogoća pri dizajnu te određivanju gušenja filtara. Najčešće odabrana klasa je \textit{class-2} koja propisuje minimalno gušenje od 60 dB \citep{ansi2004}.
 
-Između već poznata dva tipa filtra (FIR i IIR), najčešći odabir za FIR filtar jest optimalni FIR filtar dizajniran Parks-McLellan metodom i Butterworth filtar opisani u poglavlju \ref{filtri}.
+\begin{figure}[hbt!]
+\label{gui}
+ \centering
+ \includegraphics[scale=0.1]{photos/klasa2.png}
+ \caption{Shema određivanja gušenja filtra klase 2}
+\end{figure}
+
+Nakon određivanja centralnih frekvencija te pojasa propuštanja, potrebno je odrediti tip filtra koji će se koristiti te jedna od vrsta te vrste filtra.
+
+Iako zahtjeva više uloženog truda u dizajn te više koeficijenata, optimalni FIR filtar odabran je za ovaj sustav \ref{filtri}.
 
 \chapter{Algoritam višepojasnog filtriranja}
 Uzimajući u obzir da se obradba govora izvršava na ugradbenom sustavu, treba se imati na umu ograničenja procesiranja signala, tako da je potrebno maksimalno optimizirati sustav za rad u stvarnom vremenu. Tako u članku vezano za razvoj algoritma za obradbu signala za slušne aparate imamo ponuđeno rješenje koje itekako može koristiti u našem slučaju.
 
-Srž sustava za filtiriranje će se bazirati na decimiranim slogovima
 
-*Proširiti*
-\citep{fbdha}
+\section{Decimirani slogovi}
+Srž sustava za filtiriranje će se bazirati na decimiranim slogovima te interpolaciji istih slogova.
+
+Decimacija se definira kao uklanjanje svakog N-tog uzorka iz signala, gdje je N faktor decimacije. Ono što decimacija označuje jest smanjenje frekvencije uzorkovanja signala. U frekvencijskoj domeni, decimacija je definirana ovako:
+
+\begin{equation}
+\begin{aligned}
+U(e^{j\omega}) = \sum_{n djeljiv s M}x[n]\cdot e^{-j\omega n} = \frac{1}{M}\{\sum_{n}x[n]\cdot e^{-j\omega n} + \sum_{n}x[n]\cdot e^{-j(\omega +\frac{2\pi}{M})n} + \cdots \\ + \sum_{n}x[n]\cdot e^{-j(\omega +\frac{2\pi}{M}(M-1))n}\}
+\end{aligned}
+\end{equation}
+
+U slučaju da radimo decimaciju s faktorom 2, spektar će izgledati ovako:
+
+\begin{figure}[hbt!]
+ \centering
+ \includegraphics[scale=0.6]{photos/decimacija.png}
+ \caption{Prikaz spektra prije i nakon decimacije s faktorom 2}
+ \label{dec}
+\end{figure}
+ Vidimo da će signal biti potrebno filtrirati pojasno-propusnim filtrom granične frekvenije $\pi/2$ kako ne bi došlo do gubitka signala. Na drugoj slici vidimo filtrirani signal te na trećoj slici decimirani signal. Vidimo da mu se amplituda spektra smanjuje za faktor decimacije te se spektar dvostruko proširi. Vidimo stoga da se osnovni pojas sa sljedećim i prethodnim preklopi te da će se pojaviti male aliasing komponente.
+ 
+ 
+S druge strane, interpolacija je poznatija kao proširivanje signala za faktor M. To u principu radimo na način da nakon svakog uzorka signala ubacujemo M nula. S obzirom da se radi o proširenju signala u vremenskoj domeni, znamo da će se spektar suziti za faktor M.
+
+U slučaju interpoliranja prethodno decimiranog signala:
+
+\begin{figure}[hbt!]
+ \centering
+ \includegraphics[scale=0.6]{photos/interp.png}
+ \caption{Prikaz spektra nakon decimacije i interpolacije s faktorom 2}
+ \label{interp}
+\end{figure}
+
+Vidimo da su se nakon interpolacije susjedni pojasevi proširili na osnovni pojas, njih je potrebno filtrirati niskopojasnim filtrom kao što je učinjeno na drugoj slici, te na trećoj vidimo male aliasing komponente koje su ostale nakon filtriranja.
+
+Decimacija i interpolacija su osnovne dvije funkcionalnosti sustava s filtarskim bankama koji će pomoći pri smanjenju količine proračuna.
 
 
+\section{Implementacija algoritma višepojasnog filtriranja}
+Kao što je prije spomenuto, implementacija će se bazirati na decimiranim slogovima i tercno-oktavnim filtrima.
+
+S obzirom na već poznatu problematiku dizajna tercno-oktavnih filtara pri niskim frekvencijama i relativno visokoj frekvenciji uzorkovanja, nudi se sljedeće rješenje opisano u \citep{fbdha}.
+
+Uzevši u obzir činjenicu da tercno-oktavni filtri proizlaze iz oktavnih filtara podijeljenih na tri dijela, možemo implementirati oktavne slogove koji su prikazani na sljedećem blok dijagramu:
+
+\begin{figure}[hbt!]
+ \centering
+ \includegraphics[scale=0.6]{photos/decslog.png}
+ \caption{Blok dijagram decimiranog sloga}
+ \label{decslog}
+\end{figure}
+
+Naš signal se rasprostire kroz 7 oktava (od 157 Hz do 12500 Hz), a F42, F41, F40 su oznake tercno-oktavnih filtara u najvišoj oktavi. Sustav funkcionira na sljedeći način: Ulazni signal se filtrira s 3 filtra najviše oktave, zatim se signal filtrira s nisko-propusnim filtrom približne granične frekvencije $\pi/2$ te se signal decimira. Znamo sad da se spektar signala kod decimacije raširi za faktor 2 tako da se sad sljedeća najviša oktava filtrira sa postojeća 3 filtra, zatim opet slijedi niskopropusno filtriranje, decimacija i tako dalje.
+
+Vidimo da na ovaj način štedimo broj filtara koje je potrebno dizajnirati te neće biti potrebno dizajnirati vrlo uske pojasno propusne filtre.
+
+U bloku \textit{PROCESSING} odvija se svaka vrsta procesiranja signala; pojačanje određenih frekvencijskih područja, komprimiranje signala i slično.
+
+Nakon željenog procesiranja pojaseva signala, signal je potrebno zbrojiti i poslati na izlaz. To, kao i u decimiranom slogu, filtriramo po oktavama te krećemo od najniže oktave. Sljedeći blok dijagram prikazuje metodu sinteze signala:
+
+
+\begin{figure}[hbt!]
+ \centering
+ \includegraphics[scale=0.6]{photos/intslog.png}
+ \caption{Blok dijagram interpolirajućeg sloga}
+ \label{intslog}
+\end{figure}
+
+Na ovaj način moguće je napraviti skoro savršenu rekonstrukciju signala uz dobar dizajn pojasno-propusnih filtara $F42$, $F41$, $F40$ i niskopropusnih filtara $D$ i $I$.
+
+
+\section{Dizajn filtara oktavno-decimiranog sloga}
+Kao što je spomenuto u poglavlju \ref{filtri}, odabran je dizajn optimalnog FIR filtra Parks-McClellanovom metodom. Ova metoda je predložena 1973. godine.
+
+Metoda nudi mogućnost dizajna sva 4\footnote{FIR filtri dolaze u formi simetričnih i antisimetričnih filtara (striktno gledajući koeficijente) te iz toga proizlazi njihova linearna faza} tipa FIR filtra. Dizajn se temelji na Remezovom algoritmu koji je iterativna metoda pronalaska koeficijenata FIR filtra po zadanim parametrima $A(e^{j\omega})$ i $W(e^{j\omega})$ koji predstavljaju idealnu amplitudnu karakteristiku filtra te težinsku funkciju. Iterativno se određuju koeficijenti $A(e^{j\omega})$ tako da je razlika između njega i $D(e^{j\omega})$ preko zatvorenih podintervala minimalna. Greška aproksimacije je dana:
+
+\begin{equation}
+\begin{aligned}
+E(\omega) = W(e^{j\omega})[H(e^{j\omega})-D(e^{j\omega})]
+\end{aligned}
+\end{equation}
+
+Čebišovljev ili minimax kriterij definira maksimalna vrijednost greške na skupu R razdvojenih područjja na kojima je $D(e^{j\omega})$ definiran.
+
+\begin{equation}
+\begin{aligned}
+\epsilon = max_{\omega \in R}\mid E(\omega) \mid
+\end{aligned}
+\end{equation}
+
+Filtri dizajnirani na ovaj način nazivaju se filtrima jednolike valovitosti (engl. \textit{equiripple})
+
+\begin{figure}[hbt!]
+ \centering
+ \includegraphics[scale=0.6]{photos/firpm.png}
+ \caption{Projektiranje FIR filtra Parks-McClellanovom metodom}
+ \label{firpm}
+\end{figure}
+
+Algoritam je sljedeći: \\
+Iterativno se podešavaju koeficijenti $H(\omega)$ dok god maksimum pogreške $E(\omega)$ nije minimalan. Recimo,  maksimum greške iznosi $\epsilon_{0}$, tada za apsolutnu grešku vrijedi:
+
+\begin{equation}
+\begin{aligned}
+\mid H(\omega) - D(\omega) \mid \leq \frac{\epsilon_{0}}{\mid W(\omega) \mid}
+\end{aligned}
+\end{equation}
+
+Idealna amplitudna karakteristika se definira na sljedeći način:
+
+\begin{equation}
+\begin{aligned}
+D(\omega) =
+\begin{cases}
+  1, &$za pojas propuštanja$\\
+  0, & $za pojas gušenja$ 
+  \end{cases}
+\end{aligned}
+\end{equation}
+
+Ono što $H(\omega)$ mora zadovoljiti jest valovitost $+-\delta_{p}$ u pojasu propuštanja i $\delta_{s}$ u pojasu gušenja.
 
 \chapter{Analiza performansi sustava}
 \section{Obrada govora u MATLAB-u}
@@ -362,10 +532,10 @@ Pomoću AudioProcessingToolboxa omogućeno je snimanje i reproduciranje u stvarn
 Također, u MATLAB-u je razvijeno grafičko sučelje za obradu govora temeljenu na optimalama. Ovakav program omogućuje inicijalizaciju filtarskih pojaseva, reprodukciju zvuka bez i s obradom. Moguć je odabir optimala od svih glasova u hrvatskom jeziku te pojačanje koje se vrši na optimalama.
 
 \begin{figure}[hbt!]
-\label{gui}
  \centering
  \includegraphics[scale=0.5]{photos/gui.png}
  \caption{Izgled grafičkog sučelja u MATLAB-u}
+ \label{gui}
 \end{figure}
 
 Na slici \ref{gui} uočavamo dio za inicijalizaciju; ono omogućuje dizajn filtara koji koristimo za ove potrebe, a to su tercno-oktavni filtri. Sljedeće se pritiskom gumba \textit{Start} pokreće reprodukcija zvuka u stvarnom vremena s određenom latencijom koja u našem slučaju nije zanemariva. \textit{Filter} gumb pokreće filtraciju pomoću optimala. Prethodno prije pokretanja obrade se treba odabrati optimala te pojačanje (u slučaju ne odabiranja pojačanja, na izlazu će biti isti zvuk kao i na ulazu). 

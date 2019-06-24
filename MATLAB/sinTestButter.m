@@ -1,6 +1,6 @@
 close all;
 clear all;
- frameLength = 4096;
+ frameLength = 1024;
  %frameLength = 4800;
  Fs = 24000;
 
@@ -11,8 +11,9 @@ t = [0:1:24000*2-1];
 sign = sin(2*freq/Fs*pi*t);
 
 Fn = 24000/2;                                      % Stopband Frequency (Normalised)
-fc = [200,250,315,400,500,630,800,1000,1250,1600,2000,2500,3150,4000,5000,6300,8024,10000];
-Wn = [178,224,282,355,447,562,708,891,1120,1410,1780,2240,2820,3550,4470,5620,7080,8910,11200,14100];
+%fc = [200,250,315,400,500,630,800,1000,1250,1600,2000,2500,3150,4000,5000,6300,8024,10000];
+fc = 2.^(([22:39]-30)/3)*1000;
+%Wn = [178,224,282,355,447,562,708,891,1120,1410,1780,2240,2820,3550,4470,5620,7080,8910,11200,14100];
 A = zeros(4*21,6);
 N = length(fc);
 
@@ -32,27 +33,26 @@ for i=1:3
     plot(f,20*log10(abs(H)));
     hold on;
 end
-[b(i+1,1:11),a(i+1,1:11)] = butter(M,W1);
-H = freqz(b(i+1,1:11),a(i+1,1:11),Fn);
-    plot(f,20*log10(abs(H)));
-    hold on;
 
-%plot(f,20*log10(abs(fft(audio,Fn))));
-    k=5;
-for i=16:-3:4
-    f1 = fc(i)/(2^(1/6)); 
-    f2 = fc(i)*(2^(1/6)); 
-    Qr = fc(i)/(f2-f1); 
+
+    f1 = fc(15)/(2^(1/6)); 
+    f2 = fc(15)*(2^(1/6)); 
+    Qr = fc(15)/(f2-f1); 
     Qd = (pi/2/M)/(sin(pi/2/M))*Qr;
     alpha = (1 + sqrt(1+4*Qd^2))/2/Qd; 
-    W1 = fc(i)/(Fs/2)/alpha; 
-    W2 = fc(i)/(Fs/2)*alpha;
-    [b(k,1:11),a(k,1:11)] = butter(M,W1);
-    H = freqz(b(k,1:11),a(k,1:11),Fn);
+    W1 = fc(15)/(Fs/2)/alpha; 
+    W2 = fc(15)/(Fs/2)*alpha;
+    
+    
+    [b(i+1,1:11),a(i+1,1:11)] = butter(M,W2);
+    H = freqz(b(i+1,1:11),a(i+1,1:11),Fn);
     plot(f,20*log10(abs(H)));
-    k=k+1;
     hold on;
-end
+    
+    [b(i+2,1:11),a(i+2,1:11)] = butter(M,W2);
+    H = freqz(b(i+2,1:11),a(i+2,1:11),Fn);
+    plot(f,20*log10(abs(H)));
+    hold on;
 % for i=5:9
 % 	[b(i,:)] = fir1(M,(12000/k)/12000);
 %     H = freqz(b(i,:),1,Fn);
@@ -66,30 +66,28 @@ z = 1;
 f = fos(120000,24000);
 sign2 = zeros(1,length(sign));
 while true
-    frameLength = 4096;
+    frameLength = 1024;
     
     x=zeros(N,frameLength);
-    audio = sign(1,z:z + 4096 - 1)-mean(sign(1,z:z + 4096 - 1));
+    y = sign(1,z:z + 1024 - 1);
     i=1;
-    y = audio;
     while i<=18
 %             figure;
             if(i ~= 1)
                 frameLength = frameLength/2;
             end
-            x(i,1:frameLength)=filtfilt(b(1,:),a(1,:),y);
-            x(i+1,1:frameLength)=filtfilt(b(2,:),a(2,:),y);
-            x(i+2,1:frameLength)=filtfilt(b(3,:),a(3,:),y);
+            x(i,1:frameLength)=filter(b(1,:),a(1,:),y);
+            x(i+1,1:frameLength)=filter(b(2,:),a(2,:),y);
+            x(i+2,1:frameLength)=filter(b(3,:),a(3,:),y);
 %             plot(f,20*log10(fftshift(abs(fft(x(i,1:frameLength),120000)))),...
 %                 f,20*log10(fftshift(abs(fft(x(i+1,1:frameLength),120000)))),...
 %                 f,20*log10(fftshift(abs(fft(x(i+2,1:frameLength),120000)))));
 %         figure;
-        filY = filtfilt(b(4,1:11),a(4,1:11),y);
+        filY = filter(b(4,1:11),a(4,1:11),y);
 %         plot(f,20*log10(fftshift(abs(fft(audio,120000)))));
-        filY = filY - mean(filY);
         y = zeros(1,length(filY)/2);
 %         figure;
-        y = 2.*filY(1:2:length(filY));
+        y = filY(1:2:length(filY));
 %         plot(f,20*log10(fftshift(abs(fft(y,120000)))));
         
         i = i + 3;
@@ -99,37 +97,39 @@ while true
     %2. korak - odraditi gain s offsetom
     %3. korak - interpolacija
     i = 18;
+    temp = 0;
     output = 0;
-    y = zeros(N/3,4096);
+    y = zeros(N/3-1,1024);
     j = 5;
-    k = 6;
-    while (i>1)
+    k = 5;
+    while (i>0)
         
         temp(1:frameLength) = x(i,1:frameLength)+x(i-1,1:frameLength)+x(i-2,1:frameLength)+output;
-        if(frameLength < 4096)
+        if(frameLength < 1024)
             y(k,1:2:2*frameLength) = temp(1:frameLength);
-             temp = filtfilt(b(j,1:11),a(j,1:11),y(k,1:2*frameLength));
-             output = temp;
-%              output(1,1:frameLength*2) = temp;
+%             figure;
+%             plot(f,20*log10(fftshift(abs(fft(y(k,:),120000)))));
+%             hold on;
+             output = filter(b(5,1:11),b(5,1:11),y(k,1:2*frameLength));
+%              plot(f,20*log10(fftshift(abs(fft(output,120000)))));
         else
-            y(k,1:frameLength) = temp(1:frameLength);
+            out = temp(1:frameLength);
         end
         frameLength = frameLength*2;
-        j = j + 1;
+        %j = j + 1;
         k = k - 1;
         i = i - 3;
     end
     
     figure;
-    plot(f,20*log10(fftshift(abs(fft(y(1,:),120000)))));
-    y = zeros(N/3,4096);
-    if (z >= 120000)
+    plot(f,20*log10(fftshift(abs(fft(out,120000)))));
+    
+    if (z > 48000-1024)
         break;
     else
-        sign(1,z:z + 4096 - 1)-mean(sign(1,z:z + 4096 - 1));
-        z = z + 4096;
+        sign2(1,z:z + 1024 - 1) = y(1,1:1024);
+        z = z + 1024;
     end
-    
 end
 
 

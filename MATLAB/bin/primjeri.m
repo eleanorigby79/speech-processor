@@ -38,33 +38,32 @@
 % figure;
 % freqz(sos1)
 % 
-fs = 44100;
-f =[0:1/fs:fs/2-1/fs]
-fc = 8024;
-[fs1,fs2,n1,n2] = filterDesign(fc,1,60);
+fs = 24000;
+f = fos(24000*2,24000);
+fc = 8000;
+[fs1,fs2,n1,n2] = filterDesign(fc,1,60,fs);
 fp1 = fc/(2^(1/6)); 
 fp2 = fc*(2^(1/6)); 
-[b1] = firpm(n1-1,[0 fs1 fp1 fp2 fs2 22050]/22050,[0 0 1 1 0 0],[100 1 100]); 
+[b1] = firpm(n1,[0 fs1 fp1 fp2 fs2 12000]/12000,[0 0 1 1 0 0],[100 1 100]); 
+ figure;
+ plot(f,20*log10(fftshift(abs(fft(b1,24000*2)))));
 
-% figure;
-% freqz(b1,1)
-
-fc = 10000;
-[fs1,fs2,n1,n2] = filterDesign(fc,1,60);
-fp1 = fc/(2^(1/6)); 
-fp2 = fc*(2^(1/6)); 
-[b2] = firpm(n1-1,[0 fs1 fp1 fp2 fs2 22050]/22050,[0 0 1 1 0 0],[100 1 100]); 
-
-% figure;
-% freqz(b2,1)
-
-fc = 12500;
-[fs1,fs2,n1,n2] = filterDesign(fc,1,60);
-fp1 = fc/(2^(1/6)); 
-fp2 = fc*(2^(1/6)); 
-[b3] = firpm(n1-1,[0 fs1 fp1 fp2 fs2 22050]/22050,[0 0 1 1 0 0],[100 1 100]); 
-
-% figure;
-% freqz(b3,1)
+% fc = 10000;
+% [fs1,fs2,n1,n2] = filterDesign(fc,1,60);
+% fp1 = fc/(2^(1/6)); 
+% fp2 = fc*(2^(1/6)); 
+% [b2] = firpm(n1-1,[0 fs1 fp1 fp2 fs2 22050]/22050,[0 0 1 1 0 0],[100 1 100]); 
+% 
+% % figure;
+% % freqz(b2,1)
+% 
+% fc = 12500;
+% [fs1,fs2,n1,n2] = filterDesign(fc,1,60);
+% fp1 = fc/(2^(1/6)); 
+% fp2 = fc*(2^(1/6)); 
+% [b3] = firpm(n1-1,[0 fs1 fp1 fp2 fs2 22050]/22050,[0 0 1 1 0 0],[100 1 100]); 
+% 
+% % figure;
+% % freqz(b3,1)
 
 
